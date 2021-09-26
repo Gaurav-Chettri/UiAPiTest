@@ -1,6 +1,9 @@
 package com.qa.testbase;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,4 +27,20 @@ public class testBase {
             e.printStackTrace();
         }
     }
+
+    public void initialisation(){
+        String browser = prop.getProperty("browser");
+        if(browser.equals("chrome")){
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+        else if(browser.equals("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+        driver.get("https://www.accuweather.com/");
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+    }
+
 }
