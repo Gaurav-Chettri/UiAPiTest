@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class cityTempPage extends testBase {
 
+    //****defining Object repository****
+
     @FindBy(css = "div.display-temp")
     WebElement temperature;
 
@@ -15,13 +17,13 @@ public class cityTempPage extends testBase {
         PageFactory.initElements(driver, this);
     }
 
-    public void fetchingTemperature(){
+    public String fetchingTemperature(){
 
         WebElement temperature = driver.findElement(By.cssSelector("div.display-temp"));
 
         String temp = temperature.getText();
-        System.out.println(temp);
 
+        return temp;
     }
 
 }

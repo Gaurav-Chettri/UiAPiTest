@@ -6,17 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class UiLayer extends testBase {
+public class searchPage extends testBase {
 
-    //defining Object repository
+    //****defining Object repository****
 
     @FindBy(name = "query")
     WebElement placeName;
 
 
-    //initialising elements
+    //****initialising elements****
 
-    public UiLayer(){
+    public searchPage(){
         PageFactory.initElements(driver, this);
     }
 

@@ -18,11 +18,9 @@ public class testBase {
     public testBase() {
         try {
             prop = new Properties();
-            FileInputStream fp = new FileInputStream(" ");
+            FileInputStream fp = new FileInputStream("C:\\Users\\ptw\\Desktop\\Assignment\\src\\main\\java\\com\\qa\\config\\config.properties");
             prop.load(fp);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -38,7 +36,7 @@ public class testBase {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
-        driver.get("https://www.accuweather.com/");
+        driver.get(prop.getProperty("url"));
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
     }
