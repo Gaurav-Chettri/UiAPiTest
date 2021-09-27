@@ -16,12 +16,15 @@ public class UIvsApiTest extends testBase {
     searchPage sp;
     cityTempPage ctp;
 
+
     @BeforeMethod
     public void setup(){
         initialisation();
         cp = new cityPage();
         sp = new searchPage();
         ctp = new cityTempPage();
+
+        //using RestAssured performing get and getting response
 
         baseURI = prop.getProperty("URI");
         RequestSpecification response = given().
@@ -37,7 +40,9 @@ public class UIvsApiTest extends testBase {
     public void testFlow(){
       cp = sp.searchPlace();
       ctp = cp.selectingCurrentWeather();
+      //temp from UI
       String temp = ctp.fetchingTemperature();
+      //temp from API
       String tempfromApi = given().get(prop.getProperty("endpoint")).then().extract().path("main.temp");
       if(temp.equals(tempfromApi)){
           System.out.println("temperature from both the sources are same");

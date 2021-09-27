@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="UIvsApiTest" duration-ms="47748" started-at="2021-09-27T23:36:39 IST" finished-at="2021-09-27T23:37:27 IST">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="47748" started-at="2021-09-27T23:36:39 IST" finished-at="2021-09-27T23:37:27 IST">
+      <class name="UIvsApiTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:UIvsApiTest@520a3426]" name="setup" is-config="true" duration-ms="30051" started-at="2021-09-27T23:36:39 IST" finished-at="2021-09-27T23:37:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testFlow()[pri:0, instance:UIvsApiTest@520a3426]" name="testFlow" duration-ms="17618" started-at="2021-09-27T23:37:09 IST" finished-at="2021-09-27T23:37:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFlow -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:UIvsApiTest@520a3426]" name="teardown" is-config="true" duration-ms="0" started-at="2021-09-27T23:37:09 IST" finished-at="2021-09-27T23:37:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UIvsApiTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- UIvsApiTest -->
+</testng-results>

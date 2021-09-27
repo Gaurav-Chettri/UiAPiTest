@@ -1,0 +1,4 @@
+com\qa\pages\cityPage.class
+com\qa\testbase\testBase.class
+com\qa\pages\cityTempPage.class
+com\qa\pages\searchPage.class
