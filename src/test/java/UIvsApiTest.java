@@ -1,4 +1,3 @@
-import com.google.gson.JsonArray;
 import com.qa.pages.cityPage;
 import com.qa.pages.cityTempPage;
 import com.qa.pages.searchPage;
@@ -6,19 +5,13 @@ import com.qa.testbase.testBase;
 import static io.restassured.RestAssured. *;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.json.simple.JSONArray;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
 
 import static io.restassured.RestAssured.baseURI;
 
 public class UIvsApiTest extends testBase {
 
-
-    Response response;
     cityPage cp;
     searchPage sp;
     cityTempPage ctp;
@@ -46,14 +39,16 @@ public class UIvsApiTest extends testBase {
       ctp = cp.selectingCurrentWeather();
       String temp = ctp.fetchingTemperature();
       String tempfromApi = given().get(prop.getProperty("endpoint")).then().extract().path("main.temp");
-        System.out.println(temp);
-        System.out.println(tempfromApi);
+      if(temp.equals(tempfromApi)){
+          System.out.println("temperature from both the sources are same");
+      }
+      else
+          System.out.println("temperature differs");
 
     }
 
     @BeforeMethod
     public void teardown(){
-
     }
 
 }
